@@ -1,0 +1,51 @@
+
+<!-- input est une variable
+    keyup permet d'avoir les entrees de input en direct
+  -->
+    <!-- 
+  Dans keyup l'option .enter c'est pour attendre qu'on clique sur entree pour faire 
+  la recherhce sinon c'est par defaut tous les caacteres du clavier: ce sont des speudo evenements
+  -->
+<!-- <input
+    #input   
+    (keyup.enter)="selectPokemon(input.value)"
+    type="number"
+> -->
+
+<!-- 
+    On va faire les conditions
+-->
+
+<!-- 
+    *ngIf pour if     
+-->
+<!-- <p *ngIf="pokemonSelected">
+    Vous avez selectionne les pokemon:  {{ pokemonSelected.name }} 
+</p>
+<p *ngIf="!pokemonSelected">
+    Vous avez selectionne un pokemon inexistant
+</p>
+ -->
+
+
+<!-- La boucle -->
+
+<!-- <p *ngFor="let item of pokemonList">
+     {{ item.name}} 
+</p> -->
+
+<!-- <p *ngFor="let item in pokemonList.length">
+    {{ pokemonList[item].name}} 
+</p> -->
+
+
+
+<nav class="fixed">
+    <div class="nav-wrapper teal">
+        <a href="#" class="brand-logo center">
+            Pokedex Library
+        </a>
+    </div>
+</nav>
+
+<router-outlet> </router-outlet>

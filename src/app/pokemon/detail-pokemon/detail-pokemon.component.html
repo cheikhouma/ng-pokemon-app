@@ -1,0 +1,51 @@
+<!-- Chapitre 6 : Les Routes --> 
+ 
+<div *ngIf="pokemon" class="row" >
+    <div class="col s12 m8 offset-m2">
+    <h2 class="header center">{{ pokemon.name }}</h2>
+    <div appHoverCursor class="card horizontal hoverable"  [pkmnBorderCard]="'#ff5722'" [style.height.px]="400"> 
+        <!-- J'ai utlise ceci poour ajouter du border au hover -->
+      <div class="card-image">
+        <img [src]="pokemon.picture">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <table class="bordered striped">
+            <tbody>
+              <tr>
+                <td class="bold">Nom</td>
+                <td ><strong>{{ pokemon.name }}</strong></td>
+              </tr>
+              <tr>
+                <td class="bold">Points de vie</td>
+                <td><strong>{{ pokemon.life }}</strong></td>
+              </tr>
+              <tr>
+                <td>Dégâts</td>
+                <td><strong>{{ pokemon.damage }}</strong></td>
+              </tr>
+              <tr>
+                <td>Types</td>
+                <td>
+                  <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold">Date de création</td>
+                <td><em>{{ pokemon.created | date:"dd/MM/yyyy" }}</em></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-action " appHoverCursor>
+          <a (click)="goToPokemonList()" class="chip">Retour</a>
+          <a 
+            pokemonTypeColor class="chip"
+            (click)="goToEditPokemon(pokemon)" >Editer </a>
+        </div>
+
+      </div>
+    </div>
+    </div>
+    </div>
+    <h4 *ngIf='!pokemon' class="center">Aucun pokémon à afficher !</h4>

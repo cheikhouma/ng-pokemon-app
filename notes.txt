@@ -1,0 +1,4 @@
+Pour les nouveuax composents et directive: l'option
+--inline-template=false permet de creer un dossir pour notre element avec le fichier ts et html a la fois.
+
+ng generate module module-name
